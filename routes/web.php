@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('formulario', 'StorageController@index');
+Route::post('storage/create', 'StorageController@save')->name('storage.create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
