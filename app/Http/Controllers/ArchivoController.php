@@ -90,7 +90,34 @@ class ArchivoController extends Controller
         $primpos = strpos($vf, '|', 2);
         $segupos = strpos($vf, '[]', 2);
         $extract = substr($vf,$primpos,$segupos-$primpos);
-        dd($primpos,$segupos,$extract,$vf);
+        //dd($primpos,$segupos,$extract,$vf);
+        return $extract;
     }
+    public function filluno(String $archivo){
+        $archiv = $this->lectura($archivo);
+        $lineas = explode(PHP_EOL, $archiv);
+        $pos = 0;
+        $ultim = count($lineas);
+        //dd($lineas,$ultim);
+        foreach ($lineas as $linea){
+            $pos++;
+            if($pos > 1 && $pos < $ultim){
+                $palabra = explode('|', $linea);
+                $rep1 = new Repouno();
+                $rep1->row =        $this->clean($palabra[1]);
+                $rep1->customer =   $this->clean($palabra[2]);
+                $rep1->seat =       $this->clean($palabra[3]);
+                $rep1->accept =     $this->clean($palabra[4]);
+                $rep1->regulatoryinformation = $this->clean($palabra[5]);
+                $rep1->save();
+            }
+        }
+        
+    }
+    public function clean($valor){
+        return trim(utf8_encode($valor));
+    }
+    public function filldos(String $archivo){
 
+    }
 }

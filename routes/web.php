@@ -23,7 +23,7 @@ Route::post('storage/create', 'StorageController@save')->name('storage.create');
 Route::get('testtt', function () {
     //$contents = Storage::get('hola[4058].txt')->store('public');
     $d = new \App\Http\Controllers\ArchivoController();
-    $d->lectura('storage/chao[4053].txt');
+    $d->filluno('storage/hola[4058].txt');
 })->name('test');
 Route::get('storage/{archivo}', function ($archivo) {
     $public_path = public_path();
