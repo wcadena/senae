@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Archivo;
+use App\Repouno;
 use Illuminate\Http\Request;
 
 class ArchivoController extends Controller
@@ -112,12 +113,34 @@ class ArchivoController extends Controller
                 $rep1->save();
             }
         }
-        
+
+    }
+    public function filldos(String $archivo){
+        $archiv = $this->lectura($archivo);
+        $lineas = explode(PHP_EOL, $archiv);
+        $pos = 0;
+        $ultim = count($lineas);
+        //dd($lineas,$ultim);
+        for($i = 0; $i < $ultim; ++$i) {
+            $linea = $lineas[$i];
+            $pos++;
+            if($pos > 1 && $pos < $ultim && $pos%2 === 0 ){
+                $palabra = explode('|', $linea);
+                /*
+                $rep1 = new Repouno();
+                $rep1->row =        $this->clean($palabra[1]);
+                $rep1->customer =   $this->clean($palabra[2]);
+                $rep1->seat =       $this->clean($palabra[3]);
+                $rep1->accept =     $this->clean($palabra[4]);
+                $rep1->regulatoryinformation = $this->clean($palabra[5]);
+                $rep1->save();
+                */
+                dd($lineas[$i+1]);
+            }
+        }
+
     }
     public function clean($valor){
         return trim(utf8_encode($valor));
-    }
-    public function filldos(String $archivo){
-
     }
 }

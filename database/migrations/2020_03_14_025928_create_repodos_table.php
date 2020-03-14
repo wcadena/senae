@@ -30,6 +30,7 @@ class CreateRepodosTable extends Migration
             $table->string('incarriagefrom');
             $table->string('arrivaltime');
             $table->string('bagdetails');
+            $table->string('bags');
 
             $table->softDeletes();
             $table->timestamps();

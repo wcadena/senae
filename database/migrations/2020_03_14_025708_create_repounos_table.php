@@ -19,8 +19,7 @@ class CreateRepounosTable extends Migration
             $table->string('customer');
             $table->string('seat');
             $table->string('accept');
-            $table->string('regulatoryinformation');
-
+            $table->longText('regulatoryinformation');
             $table->softDeletes();
             $table->timestamps();
         });
