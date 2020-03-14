@@ -47,6 +47,12 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+        'archivosenae' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/arquivos/notas_xml'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
 
         'public' => [
             'driver' => 'local',
