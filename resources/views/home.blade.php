@@ -15,6 +15,11 @@
                     @endif
 
                     You are logged in!
+                        <br>
+                    <a href="{{route('senae.indese')}}"> Index</a><br>
+                    <a href="{{route('senae.forma')}}"> Forma</a><br>
+                    <a href="{{route('senae.reporte', ['repote' => 'sssssafg'])}}"> Reporte</a><br>
+
                 </div>
             </div>
         </div>

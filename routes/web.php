@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 
 Route::get('formulario', 'StorageController@index');
+Route::get('senae/indese', 'StorageController@indese')->name('senae.indese');
+Route::get('senae/forma', 'StorageController@forma')->name('senae.forma');
+Route::get('senae/reporte/{repote}', 'StorageController@reporte')->name('senae.reporte');
 Route::post('storage/create', 'StorageController@save')->name('storage.create');
 Route::get('testtt', function () {
     //$contents = Storage::get('hola[4058].txt')->store('public');

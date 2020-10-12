@@ -91,5 +91,17 @@ class StorageController extends Controller
         Anuncio::create($requestData);
         return redirect()->route('grupoanuncio.show', ['country' => $storegroup,'campana' => $campana,'grupoanuncio' => $grupoanuncio])->with('flash_message', 'Anuncio Creado');
     }
-
+    public function indese()
+    {
+        return view('site.senae.index');
+    }
+    public function forma()
+    {
+        return view('site.senae.forma');
+    }
+    public function reporte($repote)
+    {
+        dd($repote);
+        return view('site.senae.reportee');
+    }
 }
