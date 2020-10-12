@@ -9,17 +9,18 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Indice de Archivos</div>
                     <div class="panel-body">
-                        <form action="{{route('senae.reporte', ['repote' => 'sssssafg'])}}">
+                        <form action="{{route('senae.reporte', ['repote' => 'sssssafg'])}}" method="post" >
+                            @csrf
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Tipo Reporte</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select class="form-control" id="tip1" name="tip1">
                                     <option value="llegada">Llegada</option>
                                     <option value="salida">Salida</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Regulacion</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">JFE Screen Copy - Plain Text
+                                <textarea class="form-control" id="regulacion1" name="regulacion1" rows="3">JFE Screen Copy - Plain Text
 
 ->Enter Flight
 Flight Information->Regulatory Complete List
@@ -121,7 +122,7 @@ Ascending
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Reporte</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">JFE Screen Copy - Plain Text
+                                <textarea class="form-control" id="repo1" name="repo1" rows="3">JFE Screen Copy - Plain Text
 
 ->Enter Flight
 Flight Information->Customer List Selection->Customer List

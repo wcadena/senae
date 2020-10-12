@@ -99,9 +99,9 @@ class StorageController extends Controller
     {
         return view('site.senae.forma');
     }
-    public function reporte($repote)
+    public function reporte($repote, Request $request)
     {
-        dd($repote);
+        dd($repote,$request->all());
         return view('site.senae.reportee');
     }
 }
