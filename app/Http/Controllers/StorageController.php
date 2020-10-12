@@ -27,11 +27,14 @@ class StorageController extends Controller
     {
 
         //obtenemos el campo file definido en el formulario
-        $file = $request->file('file');
+        $file1 = $request->file('file1');
+        $file2 = $request->file('file2');
         //obtenemos el nombre del archivo
-        $nombre = $file->getClientOriginalName();
+        $nombre1 = $file1->getClientOriginalName();
+        $nombre2 = $file2->getClientOriginalName();
         //indicamos que queremos guardar un nuevo archivo en el disco local
-        Storage::disk('local')->put($nombre, $request->file('file'));
+        Storage::disk('local')->put($nombre1, $request->file('file'));
+        Storage::disk('local')->put($nombre2, $request->file('file'));
         return "archivo guardado";
     }
     public function store($storegroup, $campana,$grupoanuncio,Request $request)

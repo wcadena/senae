@@ -14,11 +14,19 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Nuevo Archivo</label>
+                                <label class="col-md-4 control-label">Regulacion</label>
                                 <div class="col-md-6">
-                                    <input type="file" class="form-control" name="file" >
+                                    <input type="file" class="form-control" name="file1" >
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Reporte</label>
+                                <div class="col-md-6">
+                                    <input type="file" class="form-control" name="file2" >
+                                </div>
+                            </div>
+
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
